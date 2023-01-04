@@ -570,11 +570,11 @@
 
         async function loadRooms() {
             if (elements.filter.value == 0 && elements.options.value == 0 && elements.hotels.value == 0 && elements.hoptions.value == 0) {
-                const { data } = await DayPilot.Http.get("rest-api/models/room/listRooms.php", { capacity: elements.filter.value, options: elements.options.value, hotels: elements.hotels.value, hoptions: elements.hoptions.value });
+                const { data } = await DayPilot.Http.get("/rooms", { capacity: elements.filter.value, options: elements.options.value, hotels: elements.hotels.value, hoptions: elements.hoptions.value });
                 dp.resources = data;
             }
             else {
-                const { data } = await DayPilot.Http.post("rest-api/models/room/listRooms.php", { capacity: elements.filter.value, options: elements.options.value, hotels: elements.hotels.value, hoptions: elements.hoptions.value });
+                const { data } = await DayPilot.Http.post("/filter-rooms", { capacity: elements.filter.value, options: elements.options.value, hotels: elements.hotels.value, hoptions: elements.hoptions.value });
                 dp.resources = data;
             }
             dp.update();

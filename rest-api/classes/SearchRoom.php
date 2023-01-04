@@ -3,6 +3,7 @@
 class SearchRoom
 {
     private $conn;
+    private $rooms;
 
     public function __construct(Database $database)
     {

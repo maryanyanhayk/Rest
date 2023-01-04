@@ -11,7 +11,6 @@ class RoomController
         $this->processCollectionRequest($method, $capacity, $options, $hotels, $hoptions);
     }
 
-
     private function processCollectionRequest($method, $capacity, $options, $hotels, $hoptions): void
     {
         switch ($method) {

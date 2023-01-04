@@ -1,10 +1,12 @@
 <?php
 
 header("Content-type: application/json; charset=UTF-8");
-require_once('../../config.php');
-require_once('../../autoload.php');
-/* set_error_handler("ErrorHandler::handleError");
-set_exception_handler("ErrorHandler::handlerExeption"); */
+
+require_once(BASE_PATH . '/rest-api/config.php');
+require_once(BASE_PATH . '/rest-api/autoload.php');
+
+set_error_handler("ErrorHandler::handleError");
+set_exception_handler("ErrorHandler::handlerExeption");
 
 $json = file_get_contents('php://input');
 $params = json_decode($json);
