@@ -23,7 +23,8 @@ class Route
     }
   }
 
-  public function getMethod(){
+  public function getMethod()
+  {
     $this->method = $_SERVER['REQUEST_METHOD'];
     return $this->method;
   }
