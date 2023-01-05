@@ -10,7 +10,6 @@ class SearchRoom
         $this->conn = $database->getConnection();
     }
 
-
     public function getAll(string $capacity, string $options, string $hotels, string $hoptions): array
     {
         $result = [];
@@ -44,7 +43,6 @@ class SearchRoom
 
         return $result;
     }
-
 
     public function filterRoom(string $capacity, string $options, string $hotels, string $hoptions): array
     {
