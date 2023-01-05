@@ -1,8 +1,9 @@
 <?php
 
 header("Content-type: application/json; charset=UTF-8");
-require_once('../../config.php');
-require_once('../../autoload.php');
+require_once(BASE_PATH . '/rest-api/config.php');
+require_once(BASE_PATH . '/rest-api/autoload.php');
+
 set_error_handler("ErrorHandler::handleError");
 set_exception_handler("ErrorHandler::handlerExeption");
 
@@ -27,11 +28,7 @@ $stmt->bindParam(':status', $params->status);
 $stmt->bindParam(':paid', $params->paid);
 $stmt->execute();
 
-class Result
-{
-}
-
-$response = new Result();
+$response = new Response;
 $response->result = 'OK';
 $response->message = 'Update successful';
 

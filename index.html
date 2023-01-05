@@ -309,7 +309,7 @@
                         }
 
                         const room = modal.result;
-                        await DayPilot.Http.put("rest-api/models/room/updateRoom.php", room);
+                        await DayPilot.Http.put("/update-room", room);
                         console.log(room);
                         dp.rows.update(room);
                     }
@@ -318,7 +318,7 @@
                     text: "Delete", onClick: async (args) => {
                         const id = args.source.id;
 
-                        await DayPilot.Http.delete("rest-api/models/room/deleteRoom.php", { id: id });
+                        await DayPilot.Http.delete("/delete-room", { id: id });
                         dp.rows.remove(id);
                     }
                 }
@@ -355,7 +355,7 @@
                 newResource: args.newResource
             };
 
-            const { data } = await DayPilot.Http.post("rest-api/models/reservation/moveReservation.php", params);
+            const { data } = await DayPilot.Http.post("/move-reservation", params);
             dp.message(data.message);
 
         };
@@ -368,13 +368,13 @@
                 newEnd: args.newEnd
             };
 
-            const { data } = await DayPilot.Http.post("rest-api/models/reservation/resizeReservation.php", params);
+            const { data } = await DayPilot.Http.post("/resize-reservation", params);
             dp.message("Resized");
 
         };
 
         dp.onEventDeleted = async (args) => {
-            await DayPilot.Http.post("rest-api/models/reservation/deleteReservation.php", { id: args.e.id() });
+            await DayPilot.Http.post("/delete-reservation", { id: args.e.id() });
             dp.message("Deleted.");
         };
 
@@ -410,7 +410,7 @@
             }
             const e = modal.result;
 
-            const { data: result } = await DayPilot.Http.post("rest-api/models/reservation/createReservation.php", e);
+            const { data: result } = await DayPilot.Http.post("/create-reservation", e);
 
             e.id = result.id;
             e.paid = result.paid;
@@ -467,7 +467,7 @@
                 return;
             }
             const e = modal.result;
-            await DayPilot.Http.post("rest-api/models/reservation/updateReservation.php", e);
+            await DayPilot.Http.post("/update-reservation", e);
             dp.events.update(e);
         };
 
@@ -659,7 +659,7 @@
             }
 
             const room = modal.result;
-            const { data: result } = await DayPilot.Http.post("rest-api/models/room/createRoom.php", room);
+            const { data: result } = await DayPilot.Http.post("/create-room", room);
 
             room.id = result.id;
             room.status = result.status;

@@ -1,7 +1,6 @@
 <?php
 
 header("Content-type: application/json; charset=UTF-8");
-
 require_once(BASE_PATH . '/rest-api/config.php');
 require_once(BASE_PATH . '/rest-api/autoload.php');
 

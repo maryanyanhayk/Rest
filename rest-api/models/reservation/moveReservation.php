@@ -1,8 +1,9 @@
 <?php
 
 header("Content-type: application/json; charset=UTF-8");
-require_once('../../config.php');
-require_once('../../autoload.php');
+require_once(BASE_PATH . '/rest-api/config.php');
+require_once(BASE_PATH . '/rest-api/autoload.php');
+
 set_error_handler("ErrorHandler::handleError");
 set_exception_handler("ErrorHandler::handlerExeption");
 
@@ -24,12 +25,8 @@ $stmt->bindParam(':resource', $params->newResource);
 $stmt->execute();
 $overlaps = $stmt->rowCount() > 0;
 
-class Result
-{
-}
-
 if ($overlaps) {
-    $response = new Result();
+    $response = new Response;
     $response->result = 'Error';
     $response->message = 'This reservation overlaps with an existing reservation.';
 
@@ -45,7 +42,7 @@ $stmt->bindParam(':id', $params->id);
 $stmt->bindParam(':resource', $params->newResource);
 $stmt->execute();
 
-$response = new Result();
+$response = new Response;
 $response->result = 'OK';
 $response->message = 'Update successful';
 
