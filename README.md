@@ -5,7 +5,7 @@ Rest Services.
 ## Project Description
 
 Created restful api for hotel booking reservation system, without payment. The platform can contain different hotels with several options. Also the hotel can have different type of rooms with various options. The platform also provide us opportunity filter rooms depending their options. The platform was created without the payment system, but the system is designed so that it can be added in the future. For front demonstration added DayPilot demo version.
-To get more familiar with db, you can look at the ERD diagram, which you can find inside documents folder.
+To get more familiar with db, you can look at the ERD diagram, which you can find inside Documents folder.
 
 ## Table of Contents
 
@@ -80,7 +80,7 @@ For Linux operation system
 
     Connect to your database
     Create your database (currently created db name is hotel)
-    For test information you can import hotel.sql into your db. File located inside database folder.
+    For test information you can import hotel.sql into your db. File located inside database, db_dump folder.
     Start your services:
     - sudo service nginx start
     - sudo service php8.1-fpm start
@@ -101,7 +101,7 @@ For that you can find requests collections file inside Document folder.
 
 ## Visuals
 
-Depending on what we are making, you can check some gifes inside visuals folder.
+Depending on what we are making, you can check some gifes inside Visuals folder.
 
 ## Support
 If you will have any questions, I'm opening to discuss them.
