@@ -13,8 +13,12 @@ $params = json_decode($json);
 $database = new Database(_DB_SERVER_, _DB_NAME_, _DB_USER_, _DB_PASS_);
 $conn = $database->getConnection();
 
-$start = $_GET['start'];
-$end = $_GET['end'];
+/**
+ * Get current and next months start dates.
+ */
+$endTime = date(strtotime(date('m', strtotime('+1 month')) . '/01/' . date('Y') . ' 00:00:00'));
+$start = date('Y-m-01 H:i:s');
+$end = (date('Y-m-d H:i:s', $endTime));
 
 $stmt = $conn->prepare("SELECT * FROM reservations WHERE NOT ((end <= :start) OR (start >= :end))");
 $stmt->bindParam(':start', $start);

@@ -97,7 +97,7 @@ For Linux operation system
 ## Test and Deploy
 
 You can test after doing all installation steps which are described above. For that used DatePicker demo version, also I have print all data, which you can find inside your browser developer tools, under Network section. If you don't want to run the whole application, you can use Postman or Swagger tools to send appropriate requests and receive responses. 
-For that you can find requests collections file inside Document folder.
+For that you can find requests collections file inside Documents folder.
 
 ## Visuals
 

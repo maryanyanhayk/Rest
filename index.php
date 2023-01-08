@@ -20,3 +20,6 @@ $route->add("/update-reservation", BASE_PATH . "/rest-api/models/reservation/upd
 $route->add("/delete-reservation", BASE_PATH . "/rest-api/models/reservation/deleteReservation.php");
 $route->add("/move-reservation", BASE_PATH . "/rest-api/models/reservation/moveReservation.php");
 $route->add("/resize-reservation", BASE_PATH . "/rest-api/models/reservation/resizeReservation.php");
+
+$route->add("/reservations", BASE_PATH . "/rest-api/models/reservation/listReservations.php");
+

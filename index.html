@@ -565,7 +565,8 @@
         }
 
         function loadReservations() {
-            dp.events.load("rest-api/models/reservation/listReservations.php");
+            const { data } = DayPilot.Http.get("/reservations");
+            dp.events.load("/rest-api/models/reservation/listReservations.php");            
         }
 
         async function loadRooms() {
