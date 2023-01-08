@@ -355,7 +355,7 @@
                 newResource: args.newResource
             };
 
-            const { data } = await DayPilot.Http.post("/move-reservation", params);
+            const { data } = await DayPilot.Http.patch("/move-reservation", params);
             dp.message(data.message);
 
         };
@@ -368,13 +368,13 @@
                 newEnd: args.newEnd
             };
 
-            const { data } = await DayPilot.Http.post("/resize-reservation", params);
+            const { data } = await DayPilot.Http.patch("/resize-reservation", params);
             dp.message("Resized");
 
         };
 
         dp.onEventDeleted = async (args) => {
-            await DayPilot.Http.post("/delete-reservation", { id: args.e.id() });
+            await DayPilot.Http.delete("/delete-reservation", { id: args.e.id() });
             dp.message("Deleted.");
         };
 
@@ -467,7 +467,7 @@
                 return;
             }
             const e = modal.result;
-            await DayPilot.Http.post("/update-reservation", e);
+            await DayPilot.Http.put("/update-reservation", e);
             dp.events.update(e);
         };
 

@@ -2022,6 +2022,26 @@ if (
                         })
                     );
                 }),
+                (DayPilot.Http.patch = function (e, t, n) {
+                    return (
+                        (n = n || {}),
+                        new Promise(function (i, a) {
+                            var r = {};
+                            (r.url = e),
+                                (r.method = "PATCH"),
+                                (r.data = t),
+                                (r.success = function (e) {
+                                    i(e);
+                                }),
+                                (r.error = function (e) {
+                                    a(e);
+                                }),
+                                (r.contentType = n.contentType),
+                                (r.headers = n.headers),
+                                DayPilot.ajax(r);
+                        })
+                    );
+                }),
                 (DayPilot.Http.delete = function (e, t, n) {
                     return (
                         (n = n || {}),
