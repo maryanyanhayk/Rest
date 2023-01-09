@@ -1,0 +1,714 @@
+{
+	"info": {
+		"_postman_id": "35ba27da-1e03-4281-be1a-eef75f88242a",
+		"name": "RestService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20295816"
+	},
+	"item": [
+		{
+			"name": "Room CRUD",
+			"item": [
+				{
+					"name": "List All Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://hotel.loc/rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\": 2, \"name\": \"Room 30\", \"options\": 2, \"hotels\": 1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/create-room",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"create-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Room",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":48,\"name\":\"Room 30\",\"capacity\":1,\"status\":\"Ready\",\"options\":2,\"hotels\":\"Jazz Casa Del Mar Beach\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/update-room",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"update-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":48}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/delete-room",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"delete-room"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room Filters",
+			"item": [
+				{
+					"name": "Search By Room Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"1\",\"options\":\"0\",\"hotels\":\"0\",\"hoptions\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Options",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"1\",\"hotels\":\"0\",\"hoptions\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"0\",\"hotels\":\"1\",\"hoptions\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"0\",\"hotels\":\"0\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type &  Room Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"1\",\"hotels\":\"0\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type &  Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"0\",\"hotels\":\"1\",\"hoptions\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type &  Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"0\",\"hotels\":\"0\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Option & Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"1\",\"hotels\":\"1\",\"hoptions\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Option & Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"1\",\"hotels\":\"0\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Hotel & Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"0\",\"hotels\":\"1\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type & Room Option & Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"1\",\"hotels\":\"1\",\"hoptions\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type & Room Option & Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"1\",\"hotels\":\"0\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type & Hotel & Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"0\",\"hotels\":\"1\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Option & Hotel & Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"0\",\"options\":\"1\",\"hotels\":\"1\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Room Type & Room Option & Hotel & Hotel Option",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"capacity\":\"2\",\"options\":\"1\",\"hotels\":\"1\",\"hoptions\":\"1\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/filter-rooms",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"filter-rooms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation CRUD",
+			"item": [
+				{
+					"name": "List All Reservations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/reservations",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"start\":\"2023-01-07T12:00:00\",\"end\":\"2023-01-08T12:00:00\",\"resource\":7,\"text\":\"Mr Maryanyan\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/create-reservation",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"create-reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Reservation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":21,\"start\":\"2023-01-09T12:00:00\",\"end\":\"2023-01-15T00:00:00\",\"text\":\"Mr Maryanyan\",\"resource\":6,\"bubbleHtml\":\"Reservation details: <br/>Mr Maryanyan\",\"status\":\"New\",\"paid\":0}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/update-reservation",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"update-reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":21}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hotel.loc/delete-reservation",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"delete-reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation Drug",
+			"item": [
+				{
+					"name": "Reservation Move",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":22,\"newStart\":\"2023-01-01T12:00:00\",\"newEnd\":\"2023-01-06T12:00:00\",\"newResource\":7}"
+						},
+						"url": {
+							"raw": "http://hotel.loc/move-reservation",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"move-reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservation Move Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":22,\"newStart\":\"2023-01-01T12:00:00\",\"newEnd\":\"2023-01-14T12:00:00\"}"
+						},
+						"url": {
+							"raw": "http://hotel.loc/resize-reservation",
+							"protocol": "http",
+							"host": [
+								"hotel",
+								"loc"
+							],
+							"path": [
+								"resize-reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
