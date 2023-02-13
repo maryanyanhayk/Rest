@@ -3,7 +3,7 @@ $config = array(
     'database_name' => 'hotel',
     'database_host' => 'hotel.loc',
     'database_user' => 'root',
-    'database_password' => 'q12wE#$R',
+    'database_password' => '',
     'database_prefix' => '',
     'database_engine' => 'InnoDB'
 );
